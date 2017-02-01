@@ -1,0 +1,103 @@
+/* CSS - Bootstrap - Flexbox */
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Roboto', sans-serif;
+}
+
+
+body{
+	height: 100vh;
+	width: 100vw;
+	overflow: hidden;
+}
+
+input{
+	height: 50px;
+	width: 100%;
+	padding-left: 15px;
+	font-size: 16px;
+
+}
+input:focus{
+	outline: none;
+}
+
+button{
+	width: 100%;
+	height: 50px;
+	margin-top: 10px;
+	cursor: pointer;
+}
+
+/**********************************************************************/
+/**********************************************************************/
+/**********************************************************************/
+
+#wdwLogin{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	width: 100vw;	
+	background-color: #3F51B5;		
+	z-index: 10;
+}
+
+
+.login{
+	display: flex;
+	flex-direction: column; /*row*/
+	width: 500px;
+	position: relative;
+}
+
+#lblMessage{
+	position: absolute;
+	/*bottom: -50px;*/
+	bottom: 0px;
+	/*display: flex;*/
+	/*justify-content: center;*/
+	/*align-items: center;	*/
+
+	width: 500px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	border: 1px solid white;
+	border-radius: 10px 10px 0px 0px;
+	background-color: rgba(255,255,255,0.5);
+	display: none;
+}
+
+#txtPassword{
+	margin-top: 10px;
+}
+
+
+/**********************************************************************/
+/**********************************************************************/
+/**********************************************************************/
+
+#wdwControlPanel{
+	display: flex;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100vw;
+	height: 100vh;
+	background-color: #9C27B0;
+	z-index: 9;
+}
+
+
+/**********************************************************************/
+/**********************************************************************/
+/**********************************************************************/
+
+
+

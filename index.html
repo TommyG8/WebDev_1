@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>LOGIN</title>
+
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+	<link rel="stylesheet" type="text/css" href="app.css">
+</head>
+<body>
+	
+	<!-- *********************************************************** -->
+	<!-- *********************************************************** -->
+	<!-- *********************************************************** -->
+
+	<div id="wdwLogin">
+		<div class="login">
+			<input id="txtEmail" class="test" type="text" placeholder="email or mobile">
+			<input id="txtPassword" class="test" type="password" placeholder="password">
+			<button id="btnLogin">LOGIN</button>			
+		</div>
+		<div id="lblMessage">WRONG LOGIN</div>
+	</div>
+
+	<!-- *********************************************************** -->
+	<!-- *********************************************************** -->
+	<!-- *********************************************************** -->
+
+	<div id="wdwControlPanel">
+		<button id="btnLogout">LOGOUT</button>
+		<div id="lblWelcome"></div>
+	</div>
+
+
+  <!-- ALWAYS BEFORE YOUR OWN SCRIPT -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+
+	<script>
+		
+		/**********************************************************************/
+		/**********************************************************************/
+		/**********************************************************************/		
+		$("#btnLogin").click(function(){
+			// NEVER CODE LOGIC HERE... YOU CALL/TRIGGER/RUN FUNCTION
+			fnLogin();
+		});
+
+		$("#btnLogout").click(function(){
+			fnLogout();
+		})
+
+		/**********************************************************************/
+		/**********************************************************************/
+		/**********************************************************************/	
+		function fnLogin(){
+
+			// Take/extract the values from the text boxes
+			// update a value - clear the value
+			 // $("#txtEmail").val("");
+			// var sEmailOrMobile = $("#txtEmail").val(); // Read a value
+			// alert(sEmailOrMobile);
+
+			var theCorrectUserName = "A";
+			var theCorrectUserPassword = "1";
+			
+
+
+			/*
+			var sName = "Santiago";
+			$("#test").text( sName ); // Write a name to the div
+			$("#test").text(""); // Write a name to the div
+			*/
+
+			/// sends data to the server and gets data back
+			var response = { "status":"ok", "name":"Santiago" }; // came from the server
+			/* what to do if ok or error */
+			// ok display control panel
+			// error display the error
+
+
+			/* check the correct user name and password */
+			var theUserName = $("#txtEmail").val(); // gets the value
+			var theUserPassword = $("#txtPassword").val(); // gets the value
+
+			/* This will happen in the server */
+			if( theCorrectUserName ==  theUserName && theCorrectUserPassword == theUserPassword ){
+				$("#wdwLogin").fadeOut(1000);
+				$("#lblWelcome").text( " " + response.name );
+				$("#lblMessage").slideUp();
+			}else{
+				$("#lblMessage").slideDown();
+			}
+			// slideUp JQUERY
+			// slideDown JQUERY
+
+			/*
+			if( response.status == "ok"  ){
+				$("#wdwLogin").fadeOut(1000);
+				$("#lblWelcome").text( " " + response.name );
+			}else{
+			}
+			*/
+		}
+
+
+		function fnLogout(){
+			$("#wdwControlPanel").fadeOut(1000);
+			$("#wdwLogin").fadeIn(1000);
+			$("#lblWelcome").empty();
+		}
+
+		/**********************************************************************/
+		/**********************************************************************/
+		/**********************************************************************/			
+
+
+
+
+
+
+
+
+
+
+		/**********************************************************************/
+		/**********************************************************************/
+		/**********************************************************************/	
+
+
+
+
+
+
+	</script>
+
+
+
+
+</body>
+</html>
+
